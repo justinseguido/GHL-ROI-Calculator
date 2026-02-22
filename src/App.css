@@ -357,6 +357,44 @@ body {
   color: #059669;
 }
 
+.result-value.decrease {
+  color: #dc2626;
+}
+
+/* ROI badge */
+.roi-badge {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #faf5ff, #ede9fe);
+  border: 1.5px solid #c4b5fd;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.roi-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.roi-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+.roi-value.increase {
+  color: #059669;
+}
+
+.roi-value.decrease {
+  color: #dc2626;
+}
+
 /* CTA button */
 .cta-button {
   display: block;

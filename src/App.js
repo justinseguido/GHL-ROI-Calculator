@@ -6,6 +6,7 @@ function App() {
   const [closeRate, setCloseRate] = useState(20);
   const [dealValue, setDealValue] = useState(1500);
   const [improvement, setImprovement] = useState(30);
+  const [ghlCost, setGhlCost] = useState(297);
   const [email, setEmail] = useState('');
   const [unlocked, setUnlocked] = useState(false);
   const [showResults, setShowResults] = useState(false);
@@ -15,7 +16,9 @@ function App() {
   const projectedLeads = leads * (1 + improvement / 100);
   const projectedRevenue = projectedLeads * (closeRate / 100) * dealValue;
   const monthlyIncrease = projectedRevenue - currentRevenue;
-  const annualIncrease = monthlyIncrease * 12;
+  const monthlyNetProfit = monthlyIncrease - ghlCost;
+  const annualNetProfit = monthlyNetProfit * 12;
+  const roi = ghlCost > 0 ? ((monthlyIncrease - ghlCost) / ghlCost) * 100 : 0;
 
   const maxBar = Math.max(currentRevenue, projectedRevenue) || 1;
   const currentBarWidth = (currentRevenue / maxBar) * 100;
@@ -44,7 +47,7 @@ function App() {
     <div className="app">
       <div className="calculator">
         <div className="header">
-          <h1>GHL ROI Calculator</h1>
+          <h1>GHL Revenue Impact Calculator</h1>
           <p className="subtitle">
             See how GoHighLevel automation can transform your revenue
           </p>
@@ -108,6 +111,23 @@ function App() {
               <span className="suffix">%</span>
             </div>
           </div>
+
+          <div className="input-group fade-in" style={{ animationDelay: '0.5s' }}>
+            <label htmlFor="ghlCost">
+              Monthly GHL Cost ($)
+              <span className="tooltip" title="Your monthly GoHighLevel subscription cost. Starter is ~$97/mo, Unlimited is ~$297/mo, SaaS Pro is ~$497/mo.">?</span>
+            </label>
+            <div className="input-with-prefix">
+              <span className="prefix">$</span>
+              <input
+                id="ghlCost"
+                type="number"
+                min="0"
+                value={ghlCost}
+                onChange={(e) => setGhlCost(Math.max(0, Number(e.target.value)))}
+              />
+            </div>
+          </div>
         </div>
 
         {!unlocked ? (
@@ -157,25 +177,30 @@ function App() {
               <h2>Your Projected Results</h2>
               <div className="results-grid">
                 <div className="result-card pop-in" style={{ animationDelay: '0.2s' }}>
-                  <span className="result-label">Current Monthly Revenue</span>
-                  <span className="result-value">{formatCurrency(currentRevenue)}</span>
-                </div>
-                <div className="result-card highlight pop-in" style={{ animationDelay: '0.35s' }}>
-                  <span className="result-label">Projected Revenue with GHL</span>
-                  <span className="result-value">{formatCurrency(projectedRevenue)}</span>
-                </div>
-                <div className="result-card accent pop-in" style={{ animationDelay: '0.5s' }}>
                   <span className="result-label">Monthly Revenue Increase</span>
                   <span className={`result-value ${monthlyIncrease >= 0 ? 'increase' : 'decrease'}`}>{formatChange(monthlyIncrease)}</span>
                 </div>
-                <div className="result-card accent pop-in" style={{ animationDelay: '0.65s' }}>
-                  <span className="result-label">Annual Revenue Increase</span>
-                  <span className={`result-value ${annualIncrease >= 0 ? 'increase' : 'decrease'}`}>{formatChange(annualIncrease)}</span>
+                <div className="result-card highlight pop-in" style={{ animationDelay: '0.35s' }}>
+                  <span className="result-label">Monthly GHL Cost</span>
+                  <span className="result-value">{formatCurrency(ghlCost)}</span>
                 </div>
+                <div className="result-card accent pop-in" style={{ animationDelay: '0.5s' }}>
+                  <span className="result-label">Monthly Net Profit</span>
+                  <span className={`result-value ${monthlyNetProfit >= 0 ? 'increase' : 'decrease'}`}>{formatChange(monthlyNetProfit)}</span>
+                </div>
+                <div className="result-card accent pop-in" style={{ animationDelay: '0.65s' }}>
+                  <span className="result-label">Annual Net Profit</span>
+                  <span className={`result-value ${annualNetProfit >= 0 ? 'increase' : 'decrease'}`}>{formatChange(annualNetProfit)}</span>
+                </div>
+              </div>
+
+              <div className="roi-badge pop-in" style={{ animationDelay: '0.8s' }}>
+                <span className="roi-label">Return on Investment</span>
+                <span className={`roi-value ${roi >= 0 ? 'increase' : 'decrease'}`}>{roi >= 0 ? '+' : ''}{Math.round(roi)}% ROI</span>
               </div>
             </div>
 
-            <a href="https://calendar.app.google/JHhe6yPMPQURi63T9" target="_blank" rel="noopener noreferrer" className="cta-button pop-in" style={{ animationDelay: '0.8s' }}>
+            <a href="https://calendar.app.google/JHhe6yPMPQURi63T9" target="_blank" rel="noopener noreferrer" className="cta-button pop-in" style={{ animationDelay: '0.95s' }}>
               Book a Free GHL Strategy Call
             </a>
           </div>
