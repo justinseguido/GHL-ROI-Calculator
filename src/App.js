@@ -169,8 +169,7 @@ function App() {
               </div>
             </div>
 
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a href="#" className="cta-button pop-in" style={{ animationDelay: '0.8s' }}>
+            <a href="https://calendar.app.google/JHhe6yPMPQURi63T9" target="_blank" rel="noopener noreferrer" className="cta-button pop-in" style={{ animationDelay: '0.8s' }}>
               Book a Free GHL Strategy Call
             </a>
           </div>
