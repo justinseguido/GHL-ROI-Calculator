@@ -24,6 +24,9 @@ function App() {
   const formatCurrency = (value) =>
     new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
 
+  const formatChange = (value) =>
+    `${value >= 0 ? '+' : ''}${formatCurrency(value)}`;
+
   const handleUnlock = (e) => {
     e.preventDefault();
     if (!email) return;
@@ -160,11 +163,11 @@ function App() {
                 </div>
                 <div className="result-card accent pop-in" style={{ animationDelay: '0.5s' }}>
                   <span className="result-label">Monthly Revenue Increase</span>
-                  <span className="result-value increase">+{formatCurrency(monthlyIncrease)}</span>
+                  <span className={`result-value ${monthlyIncrease >= 0 ? 'increase' : 'decrease'}`}>{formatChange(monthlyIncrease)}</span>
                 </div>
                 <div className="result-card accent pop-in" style={{ animationDelay: '0.65s' }}>
                   <span className="result-label">Annual Revenue Increase</span>
-                  <span className="result-value increase">+{formatCurrency(annualIncrease)}</span>
+                  <span className={`result-value ${annualIncrease >= 0 ? 'increase' : 'decrease'}`}>{formatChange(annualIncrease)}</span>
                 </div>
               </div>
             </div>
