@@ -60,9 +60,11 @@ function App() {
               id="leads"
               type="number"
               min="0"
+              placeholder="e.g. 100"
               value={leads}
               onChange={(e) => setLeads(Math.max(0, Number(e.target.value)))}
             />
+            <span className="helper">Total inbound leads from all sources</span>
           </div>
 
           <div className="input-group fade-in" style={{ animationDelay: '0.2s' }}>
@@ -73,11 +75,13 @@ function App() {
                 type="number"
                 min="0"
                 max="100"
+                placeholder="e.g. 20"
                 value={closeRate}
                 onChange={(e) => setCloseRate(Math.min(100, Math.max(0, Number(e.target.value))))}
               />
               <span className="suffix">%</span>
             </div>
+            <span className="helper">Percentage of leads that become paying clients</span>
           </div>
 
           <div className="input-group fade-in" style={{ animationDelay: '0.3s' }}>
@@ -88,10 +92,12 @@ function App() {
                 id="dealValue"
                 type="number"
                 min="0"
+                placeholder="e.g. 1500"
                 value={dealValue}
                 onChange={(e) => setDealValue(Math.max(0, Number(e.target.value)))}
               />
             </div>
+            <span className="helper">Revenue per closed deal or contract</span>
           </div>
 
           <div className="input-group fade-in" style={{ animationDelay: '0.4s' }}>
@@ -105,6 +111,7 @@ function App() {
                 type="number"
                 min="0"
                 max="500"
+                placeholder="e.g. 30"
                 value={improvement}
                 onChange={(e) => setImprovement(Math.min(500, Math.max(0, Number(e.target.value))))}
               />
@@ -124,6 +131,7 @@ function App() {
                 id="ghlCost"
                 type="number"
                 min="0"
+                placeholder="e.g. 297"
                 value={ghlCost}
                 onChange={(e) => setGhlCost(Math.max(0, Number(e.target.value)))}
               />

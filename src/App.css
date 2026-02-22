@@ -116,6 +116,11 @@ body {
   z-index: 10;
 }
 
+.helper {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
 .benchmark {
   font-size: 0.75rem;
   color: #6b7280;
