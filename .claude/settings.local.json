@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-react-app .)",
+      "Bash(npx create-react-app ghl-roi-calculator)",
+      "Bash(npx react-scripts build:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(winget install:*)",
+      "Bash(where:*)",
+      "Bash(git --version:*)",
+      "Bash(git remote add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

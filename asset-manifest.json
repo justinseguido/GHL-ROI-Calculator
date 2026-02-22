@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/GHL-ROI-Calculator/static/css/main.160c6cd2.css",
+    "main.js": "/GHL-ROI-Calculator/static/js/main.fba96201.js",
+    "static/js/453.47814d23.chunk.js": "/GHL-ROI-Calculator/static/js/453.47814d23.chunk.js",
+    "index.html": "/GHL-ROI-Calculator/index.html",
+    "main.160c6cd2.css.map": "/GHL-ROI-Calculator/static/css/main.160c6cd2.css.map",
+    "main.fba96201.js.map": "/GHL-ROI-Calculator/static/js/main.fba96201.js.map",
+    "453.47814d23.chunk.js.map": "/GHL-ROI-Calculator/static/js/453.47814d23.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.160c6cd2.css",
+    "static/js/main.fba96201.js"
+  ]
+}
