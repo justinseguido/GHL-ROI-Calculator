@@ -55,7 +55,7 @@ function App() {
               type="number"
               min="0"
               value={leads}
-              onChange={(e) => setLeads(Number(e.target.value))}
+              onChange={(e) => setLeads(Math.max(0, Number(e.target.value)))}
             />
           </div>
 
@@ -68,7 +68,7 @@ function App() {
                 min="0"
                 max="100"
                 value={closeRate}
-                onChange={(e) => setCloseRate(Number(e.target.value))}
+                onChange={(e) => setCloseRate(Math.min(100, Math.max(0, Number(e.target.value))))}
               />
               <span className="suffix">%</span>
             </div>
@@ -83,7 +83,7 @@ function App() {
                 type="number"
                 min="0"
                 value={dealValue}
-                onChange={(e) => setDealValue(Number(e.target.value))}
+                onChange={(e) => setDealValue(Math.max(0, Number(e.target.value)))}
               />
             </div>
           </div>
@@ -97,7 +97,7 @@ function App() {
                 min="0"
                 max="500"
                 value={improvement}
-                onChange={(e) => setImprovement(Number(e.target.value))}
+                onChange={(e) => setImprovement(Math.min(500, Math.max(0, Number(e.target.value))))}
               />
               <span className="suffix">%</span>
             </div>
