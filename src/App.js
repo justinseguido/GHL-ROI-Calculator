@@ -97,7 +97,7 @@ function App() {
           <div className="input-group fade-in" style={{ animationDelay: '0.4s' }}>
             <label htmlFor="improvement">
               Expected Lead Increase with Automation (%)
-              <span className="tooltip" title="The percentage increase in leads you expect from GHL automation — e.g. 30% means 30% more leads per month through automated follow-ups, workflows, and nurture campaigns.">?</span>
+              <span className="tooltip" title="Businesses using GHL typically see 20–50% more leads through automated follow-ups, speed-to-lead, and nurture campaigns. 30% is a conservative starting point.">?</span>
             </label>
             <div className="input-with-suffix">
               <input
@@ -110,6 +110,7 @@ function App() {
               />
               <span className="suffix">%</span>
             </div>
+            <span className="benchmark">Most GHL users see 20–50% lift. 30% is conservative.</span>
           </div>
 
           <div className="input-group fade-in" style={{ animationDelay: '0.5s' }}>

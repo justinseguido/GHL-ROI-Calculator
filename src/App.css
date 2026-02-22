@@ -116,6 +116,12 @@ body {
   z-index: 10;
 }
 
+.benchmark {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
 .input-group input {
   padding: 0.7rem 0.9rem;
   border: 1.5px solid #d1d5db;
