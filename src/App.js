@@ -204,6 +204,10 @@ function App() {
             <a href="https://calendar.app.google/JHhe6yPMPQURi63T9" target="_blank" rel="noopener noreferrer" className="cta-button pop-in" style={{ animationDelay: '0.95s' }}>
               Book a Free GHL Strategy Call
             </a>
+
+            <p className="disclaimer">
+              *These projections are estimates based on the inputs you provide and are not guaranteed results. Actual outcomes may vary depending on your industry, market conditions, and implementation.
+            </p>
           </div>
         )}
       </div>

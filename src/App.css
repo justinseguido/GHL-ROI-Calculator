@@ -426,6 +426,14 @@ body {
   transform: translateY(0);
 }
 
+.disclaimer {
+  padding: 0 2.5rem 1.5rem;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.5;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
