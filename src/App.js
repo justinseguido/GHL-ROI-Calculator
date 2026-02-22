@@ -92,7 +92,10 @@ function App() {
           </div>
 
           <div className="input-group fade-in" style={{ animationDelay: '0.4s' }}>
-            <label htmlFor="improvement">Expected Improvement with Automation (%)</label>
+            <label htmlFor="improvement">
+              Expected Lead Increase with Automation (%)
+              <span className="tooltip" title="The percentage increase in leads you expect from GHL automation — e.g. 30% means 30% more leads per month through automated follow-ups, workflows, and nurture campaigns.">?</span>
+            </label>
             <div className="input-with-suffix">
               <input
                 id="improvement"
