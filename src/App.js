@@ -47,9 +47,10 @@ function App() {
     <div className="app">
       <div className="calculator">
         <div className="header">
-          <h1>GHL Revenue Impact Calculator</h1>
+          <span className="eyebrow">GoHighLevel ROI Calculator</span>
+          <h1>See What Automation Is Worth</h1>
           <p className="subtitle">
-            See how GoHighLevel automation can transform your revenue
+            Estimate the revenue GoHighLevel automation can add to your business
           </p>
         </div>
 
